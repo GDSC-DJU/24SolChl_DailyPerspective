@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:whatisthis/screen/pip.dart';
 
 class mainscreen extends StatelessWidget {
+  const mainscreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('image TTs', style: TextStyle(color: Colors.white)),
+        title: const Text('image TTs', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.black,
       ),
       body: Center(
         child: Column(children: [
-          SizedBox(
+          const SizedBox(
             height: 20,
             width: 30,
           ),
@@ -19,12 +21,12 @@ class mainscreen extends StatelessWidget {
             onPressed: () {
               pip();
             },
-            child: Text(
+            style: FilledButton.styleFrom(
+                minimumSize: const Size(300, 300), backgroundColor: Colors.red),
+            child: const Text(
               'start',
               style: TextStyle(fontSize: 50, color: Colors.white),
             ),
-            style: FilledButton.styleFrom(
-                minimumSize: Size(300, 300), backgroundColor: Colors.red),
           )
         ]),
       ),

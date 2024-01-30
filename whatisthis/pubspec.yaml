@@ -41,6 +41,7 @@ dependencies:
   image_classifier: ^1.0.2
   text_to_speech: ^0.2.3
   flutter_in_app_pip: ^1.7.3
+  flutter_dotenv: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -65,7 +66,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - .env
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
