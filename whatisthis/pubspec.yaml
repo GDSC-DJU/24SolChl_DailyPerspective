@@ -40,6 +40,7 @@ dependencies:
   flutter_gemini: ^2.0.1
   image_classifier: ^1.0.2
   text_to_speech: ^0.2.3
+  flutter_in_app_pip: ^1.7.3
 
 dev_dependencies:
   flutter_test:
