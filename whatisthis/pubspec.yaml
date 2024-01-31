@@ -41,6 +41,7 @@ dependencies:
   image_classifier: ^1.0.2
   text_to_speech: ^0.2.3
   flutter_in_app_pip: ^1.7.3
+  simple_pip_mode: ^0.8.0
 
 dev_dependencies:
   flutter_test:
