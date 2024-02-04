@@ -23,6 +23,15 @@ class nextscreen extends StatelessWidget {
             ),
             style: FilledButton.styleFrom(
                 minimumSize: Size(50, 50), backgroundColor: Colors.red),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text(
+              'TEST',
+              style: TextStyle(fontSize: 50, color: Colors.white),
+            ),
+            style: FilledButton.styleFrom(
+                minimumSize: Size(50, 50), backgroundColor: Colors.red),
           )
         ]),
       ),

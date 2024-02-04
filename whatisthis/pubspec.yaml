@@ -41,12 +41,8 @@ dependencies:
   image_classifier: ^1.0.2
   text_to_speech: ^0.2.3
   flutter_in_app_pip: ^1.7.3
-<<<<<<< HEAD
-  simple_pip_mode: ^0.8.0
-=======
   flutter_dotenv: ^5.1.0
->>>>>>> ac4bd5e6ac16f475c373a1c316952239759c236d
-
+  simple_pip_mode: ^0.8.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
