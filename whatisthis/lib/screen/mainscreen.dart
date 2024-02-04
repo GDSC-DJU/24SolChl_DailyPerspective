@@ -45,7 +45,20 @@ class mainscreen extends StatelessWidget {
               'start',
               style: TextStyle(fontSize: 50, color: Colors.white),
             ),
+          ),
+          // ---------------------------------------재형쨩의 테스트 버튼-------------------------------------
+          ElevatedButton(
+            onPressed: () {
+              //기능
+            },
+            style: FilledButton.styleFrom(
+                minimumSize: const Size(50, 50), backgroundColor: Colors.red),
+            child: const Text(
+              'start',
+              style: TextStyle(fontSize: 50, color: Colors.white),
+            ),
           )
+          //------------------------------------------------------------------
         ]),
       ),
     );
