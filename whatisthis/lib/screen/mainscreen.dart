@@ -36,17 +36,12 @@ class mainscreen extends StatelessWidget {
             width: 30,
           ),
           ElevatedButton(
-<<<<<<< HEAD
-            onPressed: () => SimplePip().setAutoPipMode(),
-            child: Text(
-=======
             onPressed: () {
               pip();
             },
             style: FilledButton.styleFrom(
                 minimumSize: const Size(300, 300), backgroundColor: Colors.red),
             child: const Text(
->>>>>>> ac4bd5e6ac16f475c373a1c316952239759c236d
               'start',
               style: TextStyle(fontSize: 50, color: Colors.white),
             ),
