@@ -1,25 +1,31 @@
 import 'package:system_alert_window/system_alert_window.dart';
 
 class Commons {
-  static String getWindowGravuty(SystemWindowGravity gravity) {
+  ///Converts SystemWindowGravity to string format
+  static String getWindowGravity(SystemWindowGravity gravity) {
+    //if (gravity == null) gravity = SystemWindowGravity.TOP;
     switch (gravity) {
       case SystemWindowGravity.CENTER:
         return "center";
       case SystemWindowGravity.BOTTOM:
         return "bottom";
       case SystemWindowGravity.TOP:
+      default:
         return "top";
     }
   }
 
+  ///Converts SystemWindowPrefMode to string format
   static String getSystemWindowPrefMode(SystemWindowPrefMode prefMode) {
+    //if (prefMode == null) prefMode = SystemWindowPrefMode.DEFAULT;
     switch (prefMode) {
-      case SystemWindowPrefMode.DEFAULT:
-        return "default";
-      case SystemWindowPrefMode.BUBBLE:
-        return "bubble";
       case SystemWindowPrefMode.OVERLAY:
         return "overlay";
+      case SystemWindowPrefMode.BUBBLE:
+        return "bubble";
+      case SystemWindowPrefMode.DEFAULT:
+      default:
+        return "default";
     }
   }
 }

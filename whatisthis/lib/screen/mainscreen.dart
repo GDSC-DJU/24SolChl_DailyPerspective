@@ -2,7 +2,6 @@ import 'package:flutter_in_app_pip/flutter_in_app_pip.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:whatisthis/screen/pip.dart';
-import 'package:simple_pip_mode/simple_pip.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
