@@ -1,14 +1,14 @@
-import 'package:flutter_in_app_pip/flutter_in_app_pip.dart';
+import 'package:dash_bubble/dash_bubble.dart';
+import 'dart:developer';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
-import 'package:whatisthis/screen/pip.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return PiPMaterialApp(
+    return MaterialApp(
       title: 'imageTTs',
       theme: ThemeData(
           appBarTheme:
@@ -36,7 +36,19 @@ class mainscreen extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              pip();
+              startBubble(
+                  bubbleOptions: BubbleOptions(
+                    bubbleIcon: 'test',
+                    bubbleSize: 40,
+                    enableClose: true,
+                    distanceToClose: 90,
+                    enableAnimateToEdge: true,
+                    enableBottomShadow: true,
+                    keepAliveWhenAppExit: false,
+                  ),
+                  onTap: () {
+                    logMessage(message: 'Bubble Tapped');
+                  });
             },
             style: FilledButton.styleFrom(
                 minimumSize: const Size(300, 300), backgroundColor: Colors.red),
@@ -57,9 +69,46 @@ class mainscreen extends StatelessWidget {
               style: TextStyle(fontSize: 50, color: Colors.white),
             ),
           )
-          //------------------------------------------------------------------
+          //---------------------------------------------------------------------------------------------------
         ]),
       ),
     );
+  }
+
+  Future<void> requestOverlay() async {
+    final isGranted = await DashBubble.instance.hasOverlayPermission();
+    if (isGranted == true) {
+      print("Permission is granted");
+    } else {
+      print("Permission is not granted");
+    }
+  }
+
+  Future<void> startBubble({
+    BubbleOptions? bubbleOptions,
+    VoidCallback? onTap,
+  }) async {
+    final hasStarted = await DashBubble.instance.startBubble(
+      bubbleOptions: bubbleOptions,
+      onTap: onTap,
+    );
+    if (hasStarted == true) {
+      print("Bubble is started");
+    } else {
+      print("Bubble is not started");
+    }
+  }
+
+  logMessage({required String message}) {
+    log(message);
+  }
+
+  Future<void> stopBubble() async {
+    final hasStoped = await DashBubble.instance.stopBubble();
+    if (hasStoped == true) {
+      print("close Bubble");
+    } else {
+      print("not close Bubble");
+    }
   }
 }
