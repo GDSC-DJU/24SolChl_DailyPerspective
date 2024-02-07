@@ -36,9 +36,10 @@ class mainscreen extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
+              requestOverlay();
               startBubble(
                   bubbleOptions: BubbleOptions(
-                    bubbleIcon: 'test',
+                    bubbleIcon: 'test2',
                     bubbleSize: 40,
                     enableClose: true,
                     distanceToClose: 90,
@@ -75,12 +76,11 @@ class mainscreen extends StatelessWidget {
     );
   }
 
+//pip코드
   Future<void> requestOverlay() async {
     final isGranted = await DashBubble.instance.hasOverlayPermission();
-    if (isGranted == true) {
-      print("Permission is granted");
-    } else {
-      print("Permission is not granted");
+    if (!isGranted) {
+      await DashBubble.instance.requestOverlayPermission();
     }
   }
 
