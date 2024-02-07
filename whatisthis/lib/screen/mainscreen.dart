@@ -2,6 +2,7 @@ import 'package:dash_bubble/dash_bubble.dart';
 import 'dart:developer';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:whatisthis/generate/generate_text.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,8 +13,8 @@ class MyApp extends StatelessWidget {
       title: 'imageTTs',
       theme: ThemeData(
           appBarTheme:
-              AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle.dark)),
-      home: mainscreen(),
+              const AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle.dark)),
+      home: const mainscreen(),
     );
   }
 }
@@ -61,12 +62,13 @@ class mainscreen extends StatelessWidget {
           // ---------------------------------------재형쨩의 테스트 버튼-------------------------------------
           ElevatedButton(
             onPressed: () {
-              //기능
+              generate();
             },
             style: FilledButton.styleFrom(
-                minimumSize: const Size(50, 50), backgroundColor: Colors.red),
+                minimumSize: const Size(50, 50),
+                backgroundColor: const Color.fromARGB(255, 137, 92, 89)),
             child: const Text(
-              'start',
+              'ai test',
               style: TextStyle(fontSize: 50, color: Colors.white),
             ),
           )
