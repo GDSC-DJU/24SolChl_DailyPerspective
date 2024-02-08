@@ -25,6 +25,7 @@ class mainscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text('image TTs', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.black,
@@ -41,7 +42,7 @@ class mainscreen extends StatelessWidget {
               startBubble(
                   bubbleOptions: BubbleOptions(
                     bubbleIcon: 'test2',
-                    bubbleSize: 40,
+                    bubbleSize: 140,
                     enableClose: true,
                     distanceToClose: 90,
                     enableAnimateToEdge: true,
@@ -49,30 +50,40 @@ class mainscreen extends StatelessWidget {
                     keepAliveWhenAppExit: false,
                   ),
                   onTap: () {
-                    logMessage(message: 'Bubble Tapped');
+                    logMessage(message: "실행증");
+                    generate();
                   });
             },
-            style: FilledButton.styleFrom(
-                minimumSize: const Size(300, 300), backgroundColor: Colors.red),
+            style: ElevatedButton.styleFrom(
+                minimumSize: const Size(300, 300),
+                backgroundColor: Colors.black,
+                side: BorderSide(
+                  color: Colors.white,
+                  width: 10,
+                )),
             child: const Text(
               'start',
               style: TextStyle(fontSize: 50, color: Colors.white),
             ),
           ),
-          // ---------------------------------------재형쨩의 테스트 버튼-------------------------------------
+          SizedBox(
+            height: 100,
+          ),
           ElevatedButton(
             onPressed: () {
-              generate();
+              stopBubble();
             },
-            style: FilledButton.styleFrom(
-                minimumSize: const Size(50, 50),
-                backgroundColor: const Color.fromARGB(255, 137, 92, 89)),
-            child: const Text(
-              'ai test',
-              style: TextStyle(fontSize: 50, color: Colors.white),
+            style: ElevatedButton.styleFrom(
+              minimumSize: Size(300, 50),
+              backgroundColor: Colors.black,
+              side: BorderSide(
+                color: Colors.white,
+                width: 5,
+              ),
             ),
+            child: Text('Close',
+                style: TextStyle(fontSize: 20, color: Colors.white)),
           )
-          //---------------------------------------------------------------------------------------------------
         ]),
       ),
     );
