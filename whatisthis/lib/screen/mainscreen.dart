@@ -1,5 +1,5 @@
 import 'package:dash_bubble/dash_bubble.dart';
-import 'dart:developer';
+import 'package:whatisthis/screen/pip.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:whatisthis/generate/generate_text.dart';
@@ -41,6 +41,7 @@ class mainscreen extends StatelessWidget {
             height: 20,
             width: 30,
           ),
+          //start button
           ElevatedButton(
             onPressed: () {
               requestOverlay();
@@ -71,9 +72,24 @@ class mainscreen extends StatelessWidget {
               style: TextStyle(fontSize: 50, color: Colors.white),
             ),
           ),
+
+          //help button
+          ElevatedButton(
+            onPressed: () {
+              //help page
+            },
+            child: Text('HELP'),
+            style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                minimumSize: Size(300, 50),
+                side: BorderSide(color: Colors.white, width: 5)),
+          ),
+
           SizedBox(
             height: 100,
           ),
+
+          //close button
           ElevatedButton(
             onPressed: () {
               stopBubble();
@@ -92,41 +108,5 @@ class mainscreen extends StatelessWidget {
         ]),
       ),
     );
-  }
-
-//pip코드
-  Future<void> requestOverlay() async {
-    final isGranted = await DashBubble.instance.hasOverlayPermission();
-    if (!isGranted) {
-      await DashBubble.instance.requestOverlayPermission();
-    }
-  }
-
-  Future<void> startBubble({
-    BubbleOptions? bubbleOptions,
-    VoidCallback? onTap,
-  }) async {
-    final hasStarted = await DashBubble.instance.startBubble(
-      bubbleOptions: bubbleOptions,
-      onTap: onTap,
-    );
-    if (hasStarted == true) {
-      print("Bubble is started");
-    } else {
-      print("Bubble is not started");
-    }
-  }
-
-  logMessage({required String message}) {
-    log(message);
-  }
-
-  Future<void> stopBubble() async {
-    final hasStoped = await DashBubble.instance.stopBubble();
-    if (hasStoped == true) {
-      print("close Bubble");
-    } else {
-      print("not close Bubble");
-    }
   }
 }
