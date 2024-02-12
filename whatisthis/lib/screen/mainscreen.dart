@@ -28,7 +28,12 @@ class mainscreen extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text('image TTs', style: TextStyle(color: Colors.white)),
+        centerTitle: true,
+        iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Colors.black,
+      ),
+      drawer: Drawer(
+        child: ListView(),
       ),
       body: Center(
         child: Column(children: [
