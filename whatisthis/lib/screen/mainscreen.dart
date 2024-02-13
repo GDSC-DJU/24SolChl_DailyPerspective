@@ -59,6 +59,7 @@ class mainscreen extends StatelessWidget {
                     logMessage(message: "실행증");
                     generate();
                   });
+              SystemNavigator.pop();
             },
             style: ElevatedButton.styleFrom(
                 minimumSize: const Size(300, 300),
@@ -72,13 +73,42 @@ class mainscreen extends StatelessWidget {
               style: TextStyle(fontSize: 50, color: Colors.white),
             ),
           ),
-
+          SizedBox(width: 20, height: 30),
           //help button
           ElevatedButton(
             onPressed: () {
-              //help page
+              showDialog(
+                context: context,
+                barrierDismissible: true,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text("TIP",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white)),
+                    content: Text(
+                      "내용",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    backgroundColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Colors.white, width: 2.0),
+                        borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                    actions: <Widget>[
+                      Container(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text("yes"),
+                        ),
+                      )
+                    ],
+                  );
+                },
+              );
             },
-            child: Text('HELP'),
+            child: Text('HELP',
+                style: TextStyle(color: Colors.white, fontSize: 20)),
             style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
                 minimumSize: Size(300, 50),
@@ -86,7 +116,7 @@ class mainscreen extends StatelessWidget {
           ),
 
           SizedBox(
-            height: 100,
+            height: 40,
           ),
 
           //close button
