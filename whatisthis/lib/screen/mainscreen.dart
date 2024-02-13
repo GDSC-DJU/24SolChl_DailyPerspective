@@ -59,7 +59,7 @@ class mainscreen extends StatelessWidget {
                     logMessage(message: "실행증");
                     generate();
                   });
-              SystemNavigator.pop();
+              //SystemNavigator.pop();
             },
             style: ElevatedButton.styleFrom(
                 minimumSize: const Size(300, 300),
