@@ -1,5 +1,5 @@
 import 'package:dash_bubble/dash_bubble.dart';
-import 'dart:developer';
+import 'package:whatisthis/screen/pip.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:whatisthis/generate/generate_text.dart';
@@ -28,7 +28,12 @@ class mainscreen extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: const Text('image TTs', style: TextStyle(color: Colors.white)),
+        centerTitle: true,
+        iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Colors.black,
+      ),
+      drawer: Drawer(
+        child: ListView(),
       ),
       body: Center(
         child: Column(children: [
@@ -36,6 +41,7 @@ class mainscreen extends StatelessWidget {
             height: 20,
             width: 30,
           ),
+          //start button
           ElevatedButton(
             onPressed: () {
               requestOverlay();
@@ -53,6 +59,7 @@ class mainscreen extends StatelessWidget {
                     logMessage(message: "실행증");
                     generate();
                   });
+              SystemNavigator.pop();
             },
             style: ElevatedButton.styleFrom(
                 minimumSize: const Size(300, 300),
@@ -66,9 +73,53 @@ class mainscreen extends StatelessWidget {
               style: TextStyle(fontSize: 50, color: Colors.white),
             ),
           ),
-          SizedBox(
-            height: 100,
+          SizedBox(width: 20, height: 30),
+          //help button
+          ElevatedButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                barrierDismissible: true,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text("TIP",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white)),
+                    content: Text(
+                      "내용",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    backgroundColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Colors.white, width: 2.0),
+                        borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                    actions: <Widget>[
+                      Container(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text("yes"),
+                        ),
+                      )
+                    ],
+                  );
+                },
+              );
+            },
+            child: Text('HELP',
+                style: TextStyle(color: Colors.white, fontSize: 20)),
+            style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black,
+                minimumSize: Size(300, 50),
+                side: BorderSide(color: Colors.white, width: 5)),
           ),
+
+          SizedBox(
+            height: 40,
+          ),
+
+          //close button
           ElevatedButton(
             onPressed: () {
               stopBubble();
@@ -87,41 +138,5 @@ class mainscreen extends StatelessWidget {
         ]),
       ),
     );
-  }
-
-//pip코드
-  Future<void> requestOverlay() async {
-    final isGranted = await DashBubble.instance.hasOverlayPermission();
-    if (!isGranted) {
-      await DashBubble.instance.requestOverlayPermission();
-    }
-  }
-
-  Future<void> startBubble({
-    BubbleOptions? bubbleOptions,
-    VoidCallback? onTap,
-  }) async {
-    final hasStarted = await DashBubble.instance.startBubble(
-      bubbleOptions: bubbleOptions,
-      onTap: onTap,
-    );
-    if (hasStarted == true) {
-      print("Bubble is started");
-    } else {
-      print("Bubble is not started");
-    }
-  }
-
-  logMessage({required String message}) {
-    log(message);
-  }
-
-  Future<void> stopBubble() async {
-    final hasStoped = await DashBubble.instance.stopBubble();
-    if (hasStoped == true) {
-      print("close Bubble");
-    } else {
-      print("not close Bubble");
-    }
   }
 }
