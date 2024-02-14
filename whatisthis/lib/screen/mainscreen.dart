@@ -21,7 +21,11 @@ class MyApp extends StatelessWidget {
 
 class mainscreen extends StatelessWidget {
   const mainscreen({super.key});
-
+  final List<String> gifPaths = const [
+    'lib/explin/sen1.gif',
+    'lib/explin/sen2.gif',
+    'lib/explin/sen3.gif'
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +51,7 @@ class mainscreen extends StatelessWidget {
               requestOverlay();
               startBubble(
                   bubbleOptions: BubbleOptions(
-                    bubbleIcon: 'test2',
+                    bubbleIcon: 'button2',
                     bubbleSize: 140,
                     enableClose: true,
                     distanceToClose: 90,
@@ -85,9 +89,11 @@ class mainscreen extends StatelessWidget {
                     title: Text("TIP",
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white)),
-                    content: Text(
-                      "내용",
-                      style: TextStyle(color: Colors.white),
+                    content: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white, width: 2.0),
+                      ),
+                      child: Image.asset('lib/explain/sen1.gif'),
                     ),
                     backgroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
