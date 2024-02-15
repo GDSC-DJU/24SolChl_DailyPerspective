@@ -1,4 +1,5 @@
 import 'package:dash_bubble/dash_bubble.dart';
+import 'package:whatisthis/explain/explainpage.dart';
 import 'package:whatisthis/screen/pip.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class mainscreen extends StatelessWidget {
   final List<String> gifPaths = const [
     'lib/explin/sen1.gif',
     'lib/explin/sen2.gif',
-    'lib/explin/sen3.gif'
+    'lib/explin/sen3.png'
   ];
   @override
   Widget build(BuildContext context) {
@@ -81,37 +82,7 @@ class mainscreen extends StatelessWidget {
           //help button
           ElevatedButton(
             onPressed: () {
-              showDialog(
-                context: context,
-                barrierDismissible: true,
-                builder: (context) {
-                  return AlertDialog(
-                    title: Text("TIP",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white)),
-                    content: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.white, width: 2.0),
-                      ),
-                      child: Image.asset('lib/explain/sen1.gif'),
-                    ),
-                    backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                        side: BorderSide(color: Colors.white, width: 2.0),
-                        borderRadius: BorderRadius.all(Radius.circular(10.0))),
-                    actions: <Widget>[
-                      Container(
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: Text("yes"),
-                        ),
-                      )
-                    ],
-                  );
-                },
-              );
+              explainpage(context);
             },
             child: Text('HELP',
                 style: TextStyle(color: Colors.white, fontSize: 20)),
