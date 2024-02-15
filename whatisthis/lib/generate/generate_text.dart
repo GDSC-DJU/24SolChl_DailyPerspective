@@ -12,12 +12,10 @@ generate() async {
   Uint8List bytes =
       (await rootBundle.load('assets/test.png')).buffer.asUint8List();
   //이후 assets/screenshot.png 로 교체
-
   final result = await gemini.textAndImage(
     text: "Explain this image in Korean.",
     images: [bytes],
   );
-
   //log(result?.content?.parts?.last.text ?? '');
   tts(result?.content?.parts?.last.text ?? '');
   //이후 사용 이미지 삭제

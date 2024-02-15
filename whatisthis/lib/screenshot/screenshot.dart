@@ -1,7 +1,6 @@
 import 'dart:typed_data';
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
-import 'dart:io';
 
 final ScreenshotController screenshotController = ScreenshotController();
 
