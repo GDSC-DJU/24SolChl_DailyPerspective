@@ -1,4 +1,5 @@
 import 'package:dash_bubble/dash_bubble.dart';
+import 'package:whatisthis/explain/explainpage.dart';
 import 'package:whatisthis/screen/pip.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,11 @@ class MyApp extends StatelessWidget {
 
 class mainscreen extends StatelessWidget {
   const mainscreen({super.key});
-
+  final List<String> gifPaths = const [
+    'lib/explin/sen1.gif',
+    'lib/explin/sen2.gif',
+    'lib/explin/sen3.png'
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +52,7 @@ class mainscreen extends StatelessWidget {
               requestOverlay();
               startBubble(
                   bubbleOptions: BubbleOptions(
-                    bubbleIcon: 'test2',
+                    bubbleIcon: 'button2',
                     bubbleSize: 140,
                     enableClose: true,
                     distanceToClose: 90,
@@ -59,7 +64,7 @@ class mainscreen extends StatelessWidget {
                     logMessage(message: "실행중");
                     generate();
                   });
-              SystemNavigator.pop();
+              //SystemNavigator.pop();
             },
             style: ElevatedButton.styleFrom(
                 minimumSize: const Size(300, 300),

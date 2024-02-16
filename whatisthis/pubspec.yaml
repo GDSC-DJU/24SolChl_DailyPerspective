@@ -40,7 +40,6 @@ dependencies:
   dash_bubble: ^2.0.0
   flutter_tts: ^3.8.5
   path_provider: ^2.0.0
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -51,3 +50,6 @@ flutter:
   assets:
     - .env
     - assets/
+    - lib/explain/sen1.gif
+    - lib/explain/sen2.gif
+    - lib/explain/sen3.png
