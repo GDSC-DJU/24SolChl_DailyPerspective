@@ -29,7 +29,7 @@ class mainscreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('image TTs', style: TextStyle(color: Colors.white)),
         centerTitle: true,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: Colors.black,
       ),
       drawer: Drawer(
@@ -56,7 +56,7 @@ class mainscreen extends StatelessWidget {
                     keepAliveWhenAppExit: false,
                   ),
                   onTap: () {
-                    logMessage(message: "실행증");
+                    logMessage(message: "실행중");
                     generate();
                   });
               SystemNavigator.pop();
@@ -64,7 +64,7 @@ class mainscreen extends StatelessWidget {
             style: ElevatedButton.styleFrom(
                 minimumSize: const Size(300, 300),
                 backgroundColor: Colors.black,
-                side: BorderSide(
+                side: const BorderSide(
                   color: Colors.white,
                   width: 10,
                 )),
@@ -73,7 +73,7 @@ class mainscreen extends StatelessWidget {
               style: TextStyle(fontSize: 50, color: Colors.white),
             ),
           ),
-          SizedBox(width: 20, height: 30),
+          const SizedBox(width: 20, height: 30),
           //help button
           ElevatedButton(
             onPressed: () {
@@ -82,15 +82,15 @@ class mainscreen extends StatelessWidget {
                 barrierDismissible: true,
                 builder: (context) {
                   return AlertDialog(
-                    title: Text("TIP",
+                    title: const Text("TIP",
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white)),
-                    content: Text(
+                    content: const Text(
                       "내용",
                       style: TextStyle(color: Colors.white),
                     ),
                     backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
+                    shape: const RoundedRectangleBorder(
                         side: BorderSide(color: Colors.white, width: 2.0),
                         borderRadius: BorderRadius.all(Radius.circular(10.0))),
                     actions: <Widget>[
@@ -99,7 +99,7 @@ class mainscreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
-                          child: Text("yes"),
+                          child: const Text("yes"),
                         ),
                       )
                     ],
@@ -107,15 +107,15 @@ class mainscreen extends StatelessWidget {
                 },
               );
             },
-            child: Text('HELP',
-                style: TextStyle(color: Colors.white, fontSize: 20)),
             style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
-                minimumSize: Size(300, 50),
-                side: BorderSide(color: Colors.white, width: 5)),
+                minimumSize: const Size(300, 50),
+                side: const BorderSide(color: Colors.white, width: 5)),
+            child: const Text('HELP',
+                style: TextStyle(color: Colors.white, fontSize: 20)),
           ),
 
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
 
@@ -125,14 +125,14 @@ class mainscreen extends StatelessWidget {
               stopBubble();
             },
             style: ElevatedButton.styleFrom(
-              minimumSize: Size(300, 50),
+              minimumSize: const Size(300, 50),
               backgroundColor: Colors.black,
-              side: BorderSide(
+              side: const BorderSide(
                 color: Colors.white,
                 width: 5,
               ),
             ),
-            child: Text('Close',
+            child: const Text('Close',
                 style: TextStyle(fontSize: 20, color: Colors.white)),
           )
         ]),

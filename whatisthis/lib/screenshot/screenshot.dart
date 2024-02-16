@@ -1,21 +1,27 @@
-import 'dart:typed_data';
+import 'dart:io';
+import 'dart:developer' as dev;
 import 'package:path_provider/path_provider.dart';
 import 'package:screenshot/screenshot.dart';
 
-final ScreenshotController screenshotController = ScreenshotController();
-
-Future<void> captureScreenshot() async {
+Future<void> saveScreenshot() async {
   try {
-    // Screenshot 캡처
-    Uint8List? imageUint8List = await screenshotController.capture();
+    // 스크린샷 캡처
+    final screenshotController = ScreenshotController();
+    final screenshotBytes = await screenshotController.capture();
 
-    // 이미지 데이터를 파일로 저장
-    Directory appDocDir = await getApplicationDocumentsDirectory();
-    String appDocPath = appDocDir.path;
-    String filePath = '$appDocPath/screenshot.png';
-    File file = File(filePath);
-    await file.writeAsBytes(imageUint8List!);
+    // 앱 assets 폴더 경로 가져오기
+    final appDir = await getApplicationDocumentsDirectory();
+    final assetsDir = Directory('${appDir.path}/assets');
+
+    // assets 폴더가 없으면 생성
+    if (!await assetsDir.exists()) {
+      await assetsDir.create();
+    }
+
+    // 스크린샷 파일 저장
+    final screenshotFile = File('${assetsDir.path}/screenshot.png');
+    await screenshotFile.writeAsBytes(screenshotBytes as List<int>);
   } catch (e) {
-    //에러
+    dev.log("error");
   }
 }
