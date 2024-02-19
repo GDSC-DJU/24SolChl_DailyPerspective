@@ -1,11 +1,8 @@
-import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:whatisthis/screenshot/screenshot.dart';
 
 void generate() async {
-  saveScreenshot();
   Gemini.init(apiKey: dotenv.get("key"));
   final gemini = Gemini.instance;
 
