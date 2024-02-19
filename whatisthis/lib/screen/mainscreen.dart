@@ -49,21 +49,21 @@ class mainscreen extends StatelessWidget {
           //start button
           ElevatedButton(
             onPressed: () {
-              requestOverlay();
-              startBubble(
-                  bubbleOptions: BubbleOptions(
-                    bubbleIcon: 'button2',
-                    bubbleSize: 140,
-                    enableClose: true,
-                    distanceToClose: 90,
-                    enableAnimateToEdge: true,
-                    enableBottomShadow: true,
-                    keepAliveWhenAppExit: false,
-                  ),
-                  onTap: () {
-                    logMessage(message: "실행증");
-                    generate();
-                  });
+              // requestOverlay();
+              // startBubble(
+              //     bubbleOptions: BubbleOptions(
+              //       bubbleIcon: 'button2',
+              //       bubbleSize: 140,
+              //       enableClose: true,
+              //       distanceToClose: 90,
+              //       enableAnimateToEdge: true,
+              //       enableBottomShadow: true,
+              //       keepAliveWhenAppExit: false,
+              //     ),
+              //     onTap: () {
+              //       logMessage(message: "실행증");
+              //       generate();
+              //     });
               //SystemNavigator.pop();
             },
             style: ElevatedButton.styleFrom(
