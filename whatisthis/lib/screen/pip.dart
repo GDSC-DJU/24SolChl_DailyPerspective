@@ -6,7 +6,15 @@ import 'package:flutter/material.dart';
 Future<void> requestOverlay() async {
   final isGranted = await DashBubble.instance.hasOverlayPermission();
   if (!isGranted) {
-    await DashBubble.instance.hasOverlayPermission();
+    // Assuming there is a method named requestOverlayPermission to request the permission
+    final result = await DashBubble.instance.requestOverlayPermission();
+
+    // Handle the result, e.g., show a message or perform further actions
+    if (result) {
+      print("Overlay permission granted.");
+    } else {
+      print("Overlay permission denied.");
+    }
   }
 }
 
