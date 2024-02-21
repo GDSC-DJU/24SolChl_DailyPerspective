@@ -14,6 +14,4 @@ cd whatisthis
 flutter run
 ```
 # Team
-  재형 
-  원형
-  혜성
+<img width="1027" alt="스크린샷 2024-02-21 오전 1 44 09" src="https://github.com/GDSC-DJU/24SolChl_D/assets/147372294/eb40a59e-695b-4d1d-a7dd-f7100102f064">
