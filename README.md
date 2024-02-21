@@ -5,6 +5,7 @@
 
 # Architecture
 <p align="center"><img width="887" alt="스크린샷 2024-02-21 오후 6 01 14" src="https://github.com/GDSC-DJU/24SolChl_D/assets/147372294/66ad70be-251c-440b-a214-d4a1e19b9aca"></p>
+
 # Run Program
 ```
 cd whatisthis
