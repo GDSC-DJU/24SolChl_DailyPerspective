@@ -51,6 +51,7 @@ class mainscreen extends StatelessWidget {
           ),
           //start button
           ElevatedButton(
+<<<<<<< HEAD
             onPressed: () async {
               var status = await Permission.photos.status;
               if (status.isDenied) {
@@ -85,6 +86,25 @@ class mainscreen extends StatelessWidget {
                 tts("권한이 없다면 앱 사용이 불가능 합니다.");
                 openAppSettings();
               }
+=======
+            onPressed: () {
+              // requestOverlay();
+              // startBubble(
+              //     bubbleOptions: BubbleOptions(
+              //       bubbleIcon: 'button2',
+              //       bubbleSize: 140,
+              //       enableClose: true,
+              //       distanceToClose: 90,
+              //       enableAnimateToEdge: true,
+              //       enableBottomShadow: true,
+              //       keepAliveWhenAppExit: false,
+              //     ),
+              //     onTap: () {
+              //       logMessage(message: "실행증");
+              //       generate();
+              //     });
+              //SystemNavigator.pop();
+>>>>>>> ac93bddc6e05843dad89c2cdda1d40f1b8495184
             },
             style: ElevatedButton.styleFrom(
                 minimumSize: const Size(300, 300),

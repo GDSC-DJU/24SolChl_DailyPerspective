@@ -50,6 +50,6 @@ flutter:
   assets:
     - .env
     - assets/
-    - lib/explain/sen1.gif
-    - lib/explain/sen2.gif
+    - lib/explain/sen1.png
+    - lib/explain/sen2.png
     - lib/explain/sen3.png
