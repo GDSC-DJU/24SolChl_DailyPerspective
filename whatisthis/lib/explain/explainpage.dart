@@ -14,7 +14,7 @@ void explainpage(BuildContext context) {
           content: Container(
             decoration: BoxDecoration(
                 border: Border.all(color: Colors.white, width: 2.0)),
-            child: Image.asset('lib/explain/sen1.gif'),
+            child: Image.asset('lib/explain/sen1.png'),
           ),
           backgroundColor: Colors.black,
           shape: RoundedRectangleBorder(
@@ -39,7 +39,7 @@ void explainpage(BuildContext context) {
                             decoration: BoxDecoration(
                                 border: Border.all(
                                     color: Colors.white, width: 2.0)),
-                            child: Image.asset('lib/explain/sen2.gif'),
+                            child: Image.asset('lib/explain/sen2.png'),
                           ),
                           backgroundColor: Colors.black,
                           shape: RoundedRectangleBorder(
