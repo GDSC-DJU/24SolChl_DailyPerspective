@@ -10,6 +10,6 @@ cd whatisthis
 flutter run
 ```
 # Team
-  재형
+  재형 
   원형
   혜성
