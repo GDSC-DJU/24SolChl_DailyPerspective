@@ -22,7 +22,8 @@ Press start button
 <p align="center"><img width="331" alt="스크린샷 2024-02-21 오후 7 35 21" src="https://github.com/GDSC-DJU/24SolChl_D/assets/147372294/9820c0a6-81be-476d-a6d1-6289f3985ee1"></p><br/>
 
 ```
-Go to the home screen and If you're on the home screen, navigate to the image you want to see
+Go to the home screen and If you're on the home screen,
+ navigate to the image you want to see
 ```
 <p align="center"><img width="331" alt="스크린샷 2024-02-21 오후 7 35 53" src="https://github.com/GDSC-DJU/24SolChl_D/assets/147372294/ca6d4182-aed4-465c-b83e-1c5ef770ecb9"></p><br/>
 
