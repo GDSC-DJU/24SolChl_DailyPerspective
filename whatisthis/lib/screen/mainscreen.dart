@@ -1,5 +1,7 @@
 import 'package:dash_bubble/dash_bubble.dart';
-import 'package:whatisthis/explain/explainpage.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:whatisthis/generate/get_screenshot.dart';
+import 'package:whatisthis/generate/tts.dart';
 import 'package:whatisthis/screen/pip.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +29,7 @@ class mainscreen extends StatelessWidget {
     'lib/explin/sen2.gif',
     'lib/explin/sen3.png'
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,23 +51,40 @@ class mainscreen extends StatelessWidget {
           ),
           //start button
           ElevatedButton(
-            onPressed: () {
-              requestOverlay();
-              startBubble(
-                  bubbleOptions: BubbleOptions(
-                    bubbleIcon: 'button2',
-                    bubbleSize: 140,
-                    enableClose: true,
-                    distanceToClose: 90,
-                    enableAnimateToEdge: true,
-                    enableBottomShadow: true,
-                    keepAliveWhenAppExit: false,
-                  ),
-                  onTap: () {
-                    logMessage(message: "실행중");
-                    generate();
-                  });
-              //SystemNavigator.pop();
+            onPressed: () async {
+              var status = await Permission.photos.status;
+              if (status.isDenied) {
+                tts("미디어 사용 권한을 허용해주세요.");
+              }
+              var requestStatus = await Permission.photos.request();
+              if (requestStatus.isGranted || status.isGranted) {
+                requestOverlay();
+                startBubble(
+                    bubbleOptions: BubbleOptions(
+                      bubbleIcon: 'button2',
+                      bubbleSize: 140,
+                      enableClose: true,
+                      distanceToClose: 90,
+                      enableAnimateToEdge: true,
+                      enableBottomShadow: true,
+                      keepAliveWhenAppExit: false,
+                    ),
+                    onTap: () async {
+                      logMessage(message: "실행중");
+                      tts("잠시 기다리세요.");
+                      getRecentImage();
+                      //generate();
+                    });
+                //
+                //SystemNavigator.pop();
+              } else if (requestStatus.isPermanentlyDenied ||
+                  status.isPermanentlyDenied) {
+                tts("앱 사용 권한을 확인해주세요");
+                openAppSettings();
+              } else if (status.isDenied) {
+                tts("권한이 없다면 앱 사용이 불가능 합니다.");
+                openAppSettings();
+              }
             },
             style: ElevatedButton.styleFrom(
                 minimumSize: const Size(300, 300),
