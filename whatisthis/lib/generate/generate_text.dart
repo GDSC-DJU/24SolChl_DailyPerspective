@@ -9,7 +9,8 @@ void generate() async {
   Gemini.init(apiKey: dotenv.get("key"));
   final gemini = Gemini.instance;
   //null 수정
-  Uint8List image = (await getRecentImage()) as Uint8List;
+  var file = await getRecentImage();
+  final image = await file.readAsBytes();
 
   // ignore: unnecessary_null_comparison
   if (image != null) {

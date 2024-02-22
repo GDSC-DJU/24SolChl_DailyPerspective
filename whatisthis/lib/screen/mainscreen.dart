@@ -71,9 +71,10 @@ class mainscreen extends StatelessWidget {
                     ),
                     onTap: () async {
                       logMessage(message: "실행중");
-                      tts("잠시 기다리세요.");
-                      getRecentImage();
-                      //generate();
+                      //tts("잠시 기다리세요.");
+                      //checkPermission();
+                      //getRecentImage();
+                      generate();
                     });
                 //
                 //SystemNavigator.pop();
