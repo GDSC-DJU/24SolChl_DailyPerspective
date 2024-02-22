@@ -43,7 +43,7 @@ This app can run Android version 13 and api33
 # Copyright
 ```
 loudspeaker icon : 
-https://www.flaticon.com/kr/free-icon/loudspeaker_447112?term=%ED%99%95%EC%84%B1%EA%B8%B0&page=1&position=15&origin=search&related_id=447112<br/>
+https://www.flaticon.com/kr/free-icon/loudspeaker_447112?term=%ED%99%95%EC%84%B1%EA%B8%B0&page=1&position=15&origin=search&related_id=447112
 image icon : 
-https://www.flaticon.com/kr/free-icon/images-square-outlined-interface-button-symbol_54975?term=%EC%9D%B4%EB%AF%B8%EC%A7%80&page=1&position=1&origin=search&related_id=54975 <br/>
+https://www.flaticon.com/kr/free-icon/images-square-outlined-interface-button-symbol_54975?term=%EC%9D%B4%EB%AF%B8%EC%A7%80&page=1&position=1&origin=search&related_id=54975
 ```
