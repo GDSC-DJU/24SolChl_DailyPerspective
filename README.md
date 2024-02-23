@@ -34,7 +34,7 @@ If you complete the process, the image will be changed to TTS and explained with
 # App information
 
 ```
-This app can run Android version 13 and api33
+Currently, supports up to Android 13.
 ```
 
 # Team
