@@ -22,14 +22,12 @@ Press start button
 <p align="center"><img width="331" alt="sen2" src="https://github.com/GDSC-DJU/24SolChl_DailyPerspective/assets/147372294/19aee151-5bea-422c-b5d6-b5b6b06776ff"></p><br/>
 
 ```
-Go to the home screen and If you're on the home screen,
- navigate to the image you want to see
+Then you'll get a pip button and go to the image you want and take a screenshot
 ```
 <p align="center"><img width="409" alt="스크린샷 2024-02-24 오전 11 11 33" src="https://github.com/GDSC-DJU/24SolChl_DailyPerspective/assets/147372294/86dcbee0-0031-49aa-8e7a-fae3ed3f4a9c"></p><br/>
 
 ```
-Once you have entered the desired location, find the image, place it on the screen, and capture it.
-If you complete the process, the image will be changed to TTS and explained with sound
+If you press the pip button, you will hear the TTS sound
 ```
 # App information
 
