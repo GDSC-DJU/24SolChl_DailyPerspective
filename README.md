@@ -31,5 +31,19 @@ Go to the home screen and If you're on the home screen,
 Once you have entered the desired location, find the image, place it on the screen, and capture it.
 If you complete the process, the image will be changed to TTS and explained with sound
 ```
+# App information
+
+```
+Currently, supports up to Android 13.
+```
+
 # Team
 <img width="1027" alt="스크린샷 2024-02-21 오전 1 44 09" src="https://github.com/GDSC-DJU/24SolChl_D/assets/147372294/eb40a59e-695b-4d1d-a7dd-f7100102f064">
+
+# Copyright
+```
+loudspeaker icon : 
+https://www.flaticon.com/kr/free-icon/loudspeaker_447112?term=%ED%99%95%EC%84%B1%EA%B8%B0&page=1&position=15&origin=search&related_id=447112
+image icon : 
+https://www.flaticon.com/kr/free-icon/images-square-outlined-interface-button-symbol_54975?term=%EC%9D%B4%EB%AF%B8%EC%A7%80&page=1&position=1&origin=search&related_id=54975
+```
