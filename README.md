@@ -27,7 +27,7 @@ Then you'll get a pip button and go to the image you want and take a screenshot
 <p align="center"><img width="409" alt="스크린샷 2024-02-24 오전 11 11 33" src="https://github.com/GDSC-DJU/24SolChl_DailyPerspective/assets/147372294/86dcbee0-0031-49aa-8e7a-fae3ed3f4a9c"></p><br/>
 
 ```
-If you press the pip button, you will hear the TTS sound
+If you press the pip button, TTS will play
 ```
 # App information
 
